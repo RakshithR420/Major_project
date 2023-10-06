@@ -1,0 +1,48 @@
+
+.fade-injs{
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+}
+.fade-injs.appear{
+    opacity: 1;
+}
+
+.from-left{
+    transform: translateX(-40%);
+    opacity: 0;
+}
+.from-right{
+    transform: translateX(40%);
+    opacity: 0;
+}
+
+.from-left,.from-right{
+    transition: transform 600ms ease-in,opacity 600ms ease-in;
+}
+
+.from-left.appear,
+.from-right.appear{
+    transform: translateX(0);
+    opacity: 1;
+}
+.from-rightslow{
+    transform: translateX(20%);
+    opacity: 0;
+}
+.from-leftslow{
+    transform: translateX(-20%);
+    opacity: 0;
+}
+.from-leftslow,.from-rightslow{
+    transition: transform 800ms ease-in,opacity 800ms ease-in;
+}
+.from-leftslow.appear,
+.from-rightslow.appear{
+    transform: translateX(0);
+    opacity: 1;
+}
+.ball {
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.7;
+  }

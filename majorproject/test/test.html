@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes moveFootsteps {
+            0%, 100% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(50vw);
+                opacity: 1;
+            }
+        }
+
+        .footstep-container {
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .footstep {
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            position: absolute;
+            animation: moveFootsteps 5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="footstep-container">
+        <div class="footstep"></div>
+    </div>
+</body>
+</html>
