@@ -1,0 +1,173 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and font styles for the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e2dbdb!important;
+}
+.color-navbar {
+    background-image: linear-gradient(rgb(0,0,0),rgba(255, 255, 255, 0))!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.navbar-nav{
+    margin-left: auto;
+    padding-inline-end: 400px;
+}
+.nav-item{
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: normal;
+    transition: color 0.2s ease;
+}
+.brandlogo{
+    filter: invert(100%);
+}
+.nav-item:hover{
+    color: rgb(240, 92, 92)!important;
+
+}
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff5733; /* Header text color */
+}
+
+#filters {
+    margin-top: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Main section styles */
+main {
+    padding: 20px;
+}
+
+.shoe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.shoe-item {
+    text-align: center;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Adjust the width as needed for your grid */
+    transition: transform 0.3s ease;
+}
+
+.shoe-item:hover {
+    transform: translateY(-5px);
+}
+.fixed-height {
+    height: 150px; /* Adjust the height value as needed */
+    /* You can also set other styles like width or object-fit if necessary */
+}
+.shoe-item img {
+    align-items: center;
+    width: 300px;
+    height: 200px; /* Set a maximum height for the images */
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+    margin-bottom: 10px; /* Adjust margin for headings */
+}
+
+p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px; /* Adjust margin for paragraphs */
+}
+    
+
+
+/* Footer styles */
+.footer{
+    background:#1d1d1d;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    }
+    
+    .footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+    text-align: center;
+    }
+    
+    .footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+    }
+    
+    .footer .row a:hover{
+    color:#fff;
+    }
+    
+    .footer .row ul{
+    width:100%;
+    }
+    
+    .footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    .footer .row .copyright {
+      color: gray;
+      text-align: center; /* Center the copyright text */
+  }
+    
+    @media (max-width:720px){
+    .footer{
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    }
+    }

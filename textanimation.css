@@ -1,0 +1,195 @@
+:root {
+	--delay: 0;
+	--duration: 800ms;
+	--iterations: 1;
+}
+/* •·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•· */
+
+
+.reveal-text,
+.reveal-text::after {
+	animation-delay: var(--animation-delay, 2s);
+	animation-iteration-count: var(--iterations, 1);
+	animation-duration: var(--duration, 800ms);
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.reveal-text {
+	--animation-delay: var(--delay, 0);
+	--animation-duration: var(--duration, 1000ms);
+	--animation-iterations: var(--iterations, 1);
+	position: relative;
+	font-size: 29px;
+	animation-name: clip-text;
+	color: rgb(98, 236, 236);
+	white-space: nowrap;
+	cursor: default;
+	
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color:rgb(240, 92, 92);
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		pointer-events: none;
+		animation-name: text-revealer;
+	}
+	
+}
+
+
+@keyframes clip-text {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+
+@keyframes text-revealer {
+	
+	0%, 50% {
+		transform-origin: 0 50%;
+	}
+	
+	60%, 100% {
+		transform-origin: 100% 50%;		
+	}
+
+	
+	60% {
+		transform: scaleX(1);
+	}
+	
+	100% {
+		transform: scaleX(0);
+	}
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+.type {
+	border-right: 3px solid rgba(98, 236, 236, 0.739); /* Adjust the border thickness here */
+	position: relative;
+    height: 60px; /* Adjust the height of the cursor here */
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.70);
+    justify-content: center; /* Adjust the initial height here */
+  }
+  
+  /* Animation */
+  .type {
+    animation: animated-text 1750ms steps(29, end) 1s 1 normal both,
+               animated-cursor 600ms steps(29, end) infinite;
+  }
+  
+  /* text animation */
+  
+  @keyframes animated-text {
+    from {
+      width: 350px;
+    }
+    to {
+      width: 610px;
+    }
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor {
+	from {
+		border-right-color: rgb(98, 236, 236);
+		height: 60px; /* Adjust to match the height of the button */
+	  }
+	  to {
+		border-right-color: transparent;
+		height: 60px; /* Adjust to match the height of the button */
+	  }
+	  
+  }
+
+
+  
+  .show, .show1 {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+  }
+  
+  .show {
+	animation: showup 7s forwards; /* Run once and stop */
+  }
+  
+  .show1 {
+	width: 0px;
+	animation: reveal 7s forwards; /* Run once and stop */
+  }
+  
+  .show1 span {
+	margin-left: -355px;
+	animation: slidein 7s forwards; /* Run once and stop */
+  }
+  
+  @keyframes showup {
+	0% {
+	  opacity: 0;
+	}
+	20% {
+	  opacity: 1;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes slidein {
+	0% {
+	  margin-left: -800px;
+	}
+	20% {
+	  margin-left: -800px;
+	}
+	35% {
+	  margin-left: 0px;
+	}
+	100% {
+	  margin-left: 0px;
+	}
+  }
+  
+  @keyframes reveal {
+	0% {
+	  opacity: 0;
+	  width: 0px;
+	}
+	20% {
+	  opacity: 1;
+	  width: 0px;
+	}
+	30% {
+	  width: 355px;
+	}
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 1;
+	  width: 355px;
+	}
+  }
+  

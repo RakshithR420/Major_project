@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="major_main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="contactus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+    <title>Contact us</title>
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top navbar-expand-xl navbar-dark bg-dark" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a href="#" class="navbar-brand d-inline-block">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2Fb9%2F29%2F73b9293f8cadaa5f0c5ea3d24ef6178c.png&f=1&nofb=1&ipt=f1183234a71ff6b0da5b62dbbeee3dbbdce9a96caf5409a021a85851a3cbb57f&ipo=images" alt="" class="d-inline-block align-top brandlogo" height="100px" width="100px">
+                <h1 class="d-inline-block">Shuphoric</h1>
+            </a>
+            
+            <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#xx" aria-controls="xx" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            </div>
+
+            <div class="collapse navbar-collapse" id="xx">
+                <ul class="nav navbar-nav ">
+                    <li class="active nav-item">
+                        <a class="nav-link" href="index.html#mainhero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#mainaboutus">About us</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="store.html">Store</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#mainreviews">Portfolio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+
+
+        </nav>
+
+    <section id="map">
+        <div id="map" style="height: 400px;"></div>
+        <p id="demo"></p>
+    </section>
+      </section>
+      <section id="formques_cont">
+        <div class="form-column">
+          <div class="contact-form">
+            <h2>Contact Form</h2>
+            <form id="contact-form">
+              <label for="name">Enter Name:</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+              
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
+              
+              <label for="mobile">Mobile Number:</label>
+              <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required>
+              
+              <label for="message">Enter Message:</label>
+              <textarea id="message" name="message" placeholder="Enter Your Message" required></textarea>
+              
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="infor">
+          <div class="info-column">
+            <h1>Address:</h1>
+            <p>167, 9th Main Rd, near to Empire Restaurant, Sector 6, HSR Layout, Bengaluru, Karnataka 560102</p>
+          </div>
+          
+          <div class="info-column">
+            <h1>Contact Information:</h1>
+            <p>Email: info@shuphoric.com</p>
+            <p>Phone: +91 123-456-7890</p>
+          </div>
+          
+          <div class="info-column">
+            <h1>Working Hours:</h1>
+            <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+            <p>Saturday: 10:00 AM - 5:00 PM</p>
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+      </section>
+    <footer>
+        <div class="footer">
+        <div class="row">
+            <ul>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        </ul>
+        </div>
+        
+        <div class="row">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#mainaboutus">About us</a></li>
+        <li><a href="store.html">Services</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+        
+        </ul>
+        </div>
+        
+        <div class="row" >
+            <p class="copyright">Copyright © 2023 | Designed By: Rakshith R</p>
+        </div>
+        </div>
+        </footer>
+        
+
+        <script>
+            const x = document.getElementById("demo");
+    
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.watchPosition(showPosition);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+    
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+    
+                // Initialize Google Maps and set the center to the user's location
+                const userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 14,
+                    center: userLocation,
+                });
+    
+                // Create a marker to represent the user's location on the map
+                new google.maps.Marker({
+                    position: userLocation,
+                    map: map,
+                    title: "Your Location"
+                });
+            }
+    
+            // Automatically trigger geolocation when the page loads
+            window.onload = getLocation;
+        </script>
+          
+       <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+</body>
+</html>
